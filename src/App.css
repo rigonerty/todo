@@ -1,0 +1,176 @@
+
+.Projects{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.Projects>button,.Tasks>button{
+  position: fixed;
+  bottom: -1.5vw;
+  right: 1vw;
+  font-size: 2.5vw;
+  border-radius: 1vw;
+}
+.Tasks{
+  width: 90%;
+  margin: 0 auto;
+}
+.Tasks>h2{
+  font-size: 2.9vw;
+  text-align: center;
+}
+.TasksContent{
+  margin-top: 2vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.TasksContent>div{
+  width: 32%;
+  
+}
+.TasksContent>div>h3{
+  padding: 1.1vw;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.4vw;
+  border-radius: .5vw;
+  background: #0e0e0e;
+}
+.TasksContent>div>div{
+  min-height: 60vh;
+}
+.ChooseStatusForTask{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.ChooseStatusForTask>div{
+  width: 30%;
+}
+.ChooseStatusForTask> div > button{
+  width: 100%;
+  margin-bottom: 0px;
+}
+.ChooseStatusForTask>div>div{
+  transition: .5s;
+  width: 0%;
+  height: 2px;
+}
+.AddTaskModal >label,.ChangeTaskModal>label{
+  font-size: 1.1vw;
+}
+.Search>label{
+  margin: 0 0 1.1vw 0;
+}
+.Search>label>input{
+  padding: 1.2vw;
+  margin: 0;
+  font-size: 1.25vw;
+  transition: .6s;
+  border: .2vw solid transparent;
+  border-radius: .5em;
+}
+.Search>label>input:hover{
+  border: .2vw solid rgb(172, 9, 9);
+}
+.Tasks .UploadButton{
+  padding: 1.16vw;
+  margin-bottom: 1.16vw;
+  font-size: 1.25vw;
+  text-align: center;
+}
+.UploadedFiles>div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .8vw;
+  font-size: 1.15vw;
+}
+.UploadedFiles>div:hover{
+  background: #111111;
+}
+.UploadedFiles>div>button{
+  width: auto;
+  cursor: pointer;
+  width: 2.5vw;
+  height: 2.5vw;
+  font-size: 1.3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width:950px) {
+  .Projects>button,
+    .Tasks>button {
+      bottom: .5em;
+      right: .5em;
+      font-size: 2em;
+      padding: .3em;
+      border-radius: .2em;
+  }
+  .TasksContent {
+    margin-top: 1.5em;
+    flex-wrap: wrap;
+    height: 99vh;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+  }
+  .Tasks>h2 {
+    font-size: 2em;
+  }
+  .TasksContent>div {
+    scroll-snap-align: end;
+    width: 48%;
+    flex: 0 0 auto;
+  }
+  .TasksContent>div>div {
+    height: 93vh;
+    overflow: auto;
+  }
+  .TasksContent>div>h3 {
+    padding: .6em;
+    font-size: 1.1em;
+    border-radius: .5vw;
+  }
+  .AddTaskModal>label,
+  .ChangeTaskModal>label {
+    font-size: 1.1em;
+  }
+  .Search>label {
+    margin: 0 0 1em 0;
+  }
+  
+  .Search>label>input {
+    padding: 1em;
+    margin: 0;
+    font-size: 1em;
+    transition: .6s;
+    border: .2vw solid transparent;
+    border-radius: .5em;
+  }
+  .Tasks .UploadButton {
+    padding: 1em;
+    margin-bottom: 1em;
+    font-size: 1.25em;
+  }
+
+  .UploadedFiles>div {
+    padding: .8em;
+    font-size: 1em;
+  }
+
+  .UploadedFiles>div>button {
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width:650px) {
+    .TasksContent>div {
+        width: 100%;
+      }
+    .TasksContent>div>div {
+      overflow: auto;
+    }
+}

@@ -1,0 +1,17 @@
+.Textarea{
+    background: #191919;
+    resize: none;
+    width: 100%;
+    outline: none;
+    padding: .9vw;
+    margin: 1vw 0;
+    font-size: 1.1vw;
+    overflow: hidden;
+}
+@media screen and (max-width:950px) {
+    .Textarea {
+        padding: .8em;
+        margin: 1em 0;
+        font-size: 1em;
+    }
+}

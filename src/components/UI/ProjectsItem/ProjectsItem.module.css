@@ -1,0 +1,48 @@
+.ProjectsItem{
+    width: 30vw;
+    border-radius: .5vw;
+    padding: 2%;
+    font-size: 1vw;
+    margin: 1vw 0;
+    text-decoration: none;
+    word-break: break-all;
+    text-align: center;
+    background: #252525;
+    position: relative;
+    cursor: pointer;
+}
+.ProjectsItem i {
+    font-style: normal;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1vw;
+    width: 1.8vw;
+    background: #101010;
+    height: 1.8vw;
+    border-radius: 10%;
+}
+
+@media screen and (max-width:950px) {
+    .ProjectsItem {
+        width: 45vw;
+        border-radius: 1em;
+        font-size: 1em;
+    }
+
+    .ProjectsItem i {
+        top: 5%;
+        right: 5%;
+        font-size: 1em;
+        width: 1.8em;
+        height: 1.8em;
+    }
+}
+@media screen and (max-width:750px) {
+    .ProjectsItem {
+            width: 90vw;
+        }
+}

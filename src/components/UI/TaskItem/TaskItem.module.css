@@ -1,0 +1,159 @@
+.TaskItem{
+    width: 100%;
+    margin: 1.1vw 0;
+    border: .1vw solid transparent;
+    transition: .2s;
+    border-radius: .5vw;
+    background: #202020;
+    display: flex;
+    flex-direction: column;
+    padding: .7vw .7vw 0 .7vw;
+    position: relative;
+}
+.TaskItem>i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    font-size: 1.08vw;
+    height: 2vw;
+    position: absolute;
+    top: 2%;
+    font-style: normal;
+    background: #101010;
+    border-radius: 10%;
+    right: 2%;
+}
+.TaskItem>h4{
+    margin: .8vw 0;
+    font-size: 1.35vw;
+}
+.TaskItem>p{
+    margin: .2vw 0 .8vw .8vw;
+    font-size: 1.15vw;
+    word-break: break-all;
+    white-space:inherit;
+    color: #b9b9b9;
+}
+.TaskItem>p:nth-child(4){
+    height: 5em;
+}
+.TaskItem>p>button{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 1.05vw;
+    border:none;
+    cursor: pointer;
+    padding: .5vw;
+    background: linear-gradient(transparent,#202020d0,#202020d0);
+}
+.TaskItem>div{
+    padding: .6vw;
+    margin: .6vw 0;
+    align-items: center;
+    display: flex;
+    font-size: 1.2vw;
+    justify-content: space-between;
+}
+.TaskItem>div>div>button{
+    background: #101010;
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 2.1vw;
+    height: 2.1vw;
+    font-size: 1.2vw;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.TaskItem>div>div> p{
+    font-size: 1.05vw;
+}
+.TaskItem p{
+    color: #b9b9b9;
+}
+.TaskItem>.TaskItemSubTask{
+    flex-direction: column;
+}
+.TaskDropDown{
+    padding: 1.1vw;
+    width: 100%;
+}
+.TaskDropDown button{
+    text-align: left;
+    display: block;
+    width: 100%;
+    border: none;
+    padding: .7vw;
+    font-size: 1vw;
+    background: transparent;
+}
+.TaskDropDown button:hover{
+    background: rgba(95, 95, 95, 0.411);
+}
+
+
+@media screen and (max-width:950px) {
+    .TaskItem {
+        margin: .9em 0;
+        border: .1vw solid transparent;
+        border-radius: .5em;
+        padding: .5em .5em 0 .5em;
+    }
+
+    .TaskItem>i {
+        width: 2em;
+        font-size: .8em;
+        height: 2em;
+        position: absolute;
+        top: 2%;
+        font-style: normal;
+        background: #101010;
+        border-radius: 10%;
+        right: 2%;
+    }
+
+    .TaskItem>h4 {
+        margin: .5em 0;
+        font-size: 1.5em;
+    }
+
+    .TaskItem>p {
+        margin: .2em 0 .8em .8em;
+        font-size: 1.1em;
+    }
+
+    .TaskItem>p>button {
+        font-size: .9em;
+        padding: .3em;
+    }
+
+    .TaskItem>div {
+        padding: .6em;
+        margin: .6em 0;
+        font-size: 1em;
+    }
+
+    .TaskItem>div>div>button {
+        width: 2.1em;
+        height: 2.1em;
+        font-size: 1em;
+    }
+
+    .TaskItem>div>div>p {
+        font-size: 1em;
+    }
+
+
+    .TaskDropDown {
+        padding: 1.1em;
+    }
+
+    .TaskDropDown button {
+        padding: .7em;
+        font-size: 1em;
+    }
+}
