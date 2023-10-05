@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import { addFile, addSubTask, changeTask } from "../components/pages/Tasks";
+import { addFile, addSubTask, changeTask, deleteTask } from "../components/pages/Tasks";
 import { deleteFile } from "../components/UI/FileUpload/FileUpload";
 
 
@@ -55,7 +55,7 @@ const reducer = (state=initialState,action:any)=>{
             const newArr:projects[] = [...state]
             const neededProject1 = newArr.find(a=>a.id===action.payload.projectId)
             if(neededProject1){
-                const neededTask = neededProject1.tasks.find(a=>a.id === action.payload.task.id)
+                const neededTask = neededProject1.tasks.find(a=>a.id === action.payload.taskId)
                 if(neededTask && neededTask.status!==action.payload.status){
                     if(neededTask.status==="Done" && action.payload.status!=="Done"){
                         neededTask.isOver = null
@@ -154,6 +154,31 @@ const reducer = (state=initialState,action:any)=>{
                 const neededTask = neededProject.tasks.find(a=>a.id===payload.taskId)
                 if(neededTask){
                     if(neededTask.files) neededTask.files = neededTask.files.filter(a=>a.id !== payload.fileId)      
+                }
+            }
+            return newArr
+        }
+        case "DELETETASK":{
+            const newArr = [...state]
+            const payload: deleteTask = action.payload
+            const neededProject = newArr.find(a=>a.id ===payload.projectId)
+            if(neededProject){
+               if(!payload.subtaskId) {
+                    neededProject.tasks =  neededProject.tasks.filter(a=>a.id!==payload.taskId).map(a=>{
+                        if(a.id>payload.taskId){
+                            a.id = a.id-1
+                        }
+                        return a
+                    })
+                }
+               else {
+                    const neededTask = neededProject.tasks.find(a=>a.id===payload.taskId)
+                    if(neededTask) neededTask.subTask = neededTask.subTask.filter(a=>a.id!==payload.subtaskId).map(a=>{
+                        if(a.id>payload.subtaskId){
+                            a.id = a.id-1
+                        }
+                        return a
+                    })
                 }
             }
             return newArr

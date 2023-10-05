@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import { tasks } from '../../../../store'
 import cl from "./SubTask.module.css"
 import {parseISO, formatDistanceToNow, format} from "date-fns"
-import { isChange } from '../../../pages/Tasks';
+import { deleteTask, isChange } from '../../../pages/Tasks';
 interface props{
     task:tasks;
     taskId:number;
-    setChange:(smth:isChange)=>void
+    setChange:(smth:isChange)=>void;
+    deleteTask:(smth:deleteTask)=> void;
+    projectId:number
 }
-export const SubTask = ({task,taskId,setChange}:props) => {
+export const SubTask = ({task,taskId,setChange,deleteTask,projectId}:props) => {
     let time = ''
     let timeAgo=""
     let timeOver = ''
@@ -41,7 +43,7 @@ export const SubTask = ({task,taskId,setChange}:props) => {
                 {timeOver.length?<p>{timeOver} was over.</p>:<p>{time} was created.</p>}
                 {timeAgo?<p>{timeAgo} in work.</p>:<p></p>}                
             </div>
-            <button>🗑</button>
+            <button onClick={()=>{deleteTask({projectId,taskId,subtaskId:task.id})}}>🗑</button>
             <button onClick={()=>setChange({task,taskId,subtaskId:task.id,type:"subtask"})}>🖋</button>
         </div>
     </div>

@@ -10,6 +10,10 @@
     background: #252525;
     position: relative;
     cursor: pointer;
+    transition: .2s;
+}
+.ProjectsItem:hover{
+    background: #0a0a0a;
 }
 .ProjectsItem i {
     font-style: normal;

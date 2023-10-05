@@ -104,23 +104,26 @@
   .Projects>button,
     .Tasks>button {
       bottom: .5em;
-      right: .5em;
+      left: .5em;
+      max-width: 6em;
       font-size: 2em;
       padding: .3em;
       border-radius: .2em;
   }
+  .Tasks{
+    margin-bottom: 6em;
+  }
   .TasksContent {
     margin-top: 1.5em;
-    flex-wrap: wrap;
-    height: 99vh;
+    height: 100%;
     overflow: auto;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: x mandatory;
   }
   .Tasks>h2 {
     font-size: 2em;
   }
   .TasksContent>div {
-    scroll-snap-align: end;
+    scroll-snap-align: start;
     width: 48%;
     flex: 0 0 auto;
   }
