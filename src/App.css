@@ -176,4 +176,13 @@
     .TasksContent>div>div {
       overflow: auto;
     }
+    .ChooseStatusForTask>div {
+      width: 32%;
+    }
+    .ChooseStatusForTask>div>button{
+      display: flex;
+      font-size: 1.05em;
+      justify-content: center;
+      align-items: center;
+    }
 }

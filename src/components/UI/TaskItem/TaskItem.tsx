@@ -1,10 +1,9 @@
-import React, { MouseEvent, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { tasks } from '../../../store'
 import cl from "./TaskItem.module.css"
-import { useDrag } from 'react-dnd/dist/hooks'
 import {parseISO, formatDistanceToNow, format} from "date-fns"
 import { SubTask } from './subTask/SubTask'
-import { addFile, deleteTask, isChange } from '../../pages/Tasks'
+import { deleteTask, isChange } from '../../pages/Tasks'
 import FileUpload from '../FileUpload/FileUpload'
 import {Draggable} from "react-beautiful-dnd"
 import { Dropdown } from '../DropDown/Dropdown'
@@ -35,7 +34,7 @@ export const TaskItem = ({task,setSubTask,setChange,projectId,index,deleteTask}:
         time= timeParsed
     }
     const [isHeight,setHeight] = useState(false)
-    const [isShow,setShow] = useState(task.description.length>=137?true:false)
+    const isShow = task.description.length>=137?true:false
     const stylesImportance = {
         background:task.importance==="high"?"#ac0505":task.importance==="average"?"#c2c508":"#1243ad",
         width:"max-content",
@@ -99,7 +98,7 @@ export const TaskItem = ({task,setSubTask,setChange,projectId,index,deleteTask}:
                 <button onClick={()=>{deleteTask({projectId,taskId:task.id,subtaskId:0})}}>🗑 delete</button>
                 <FileUpload task={task} projectId={projectId}/>
                 <button onClick={()=>{setChange({task,taskId:task.id,subtaskId:0,type:"task"});setMoreVisible(false)}}>🖋 change</button>
-                <button onClick={()=>{setSubTask(task.id);setMoreVisible(false)}}>+ add subtask</button>                        
+                <button onClick={()=>{setSubTask(task.id);setMoreVisible(false)}}>+ add subtask</button>   
             </div>
         </Dropdown>      
     </div>

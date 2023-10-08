@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {connect} from "react-redux"
 import { projects } from '../../store'
 import { Button } from '../UI/Button/Button';
@@ -20,7 +20,7 @@ const Projects = ({projects,addProject}:props) => {
         })}
 
         <Modal visible={isVisibleAdd} setVisible={setVisibleAdd}>
-            <Input value={isTitle} setValue={setTitle} placeholder='' name=''/> 
+            <Input value={isTitle} setValue={setTitle} placeholder='Title of project' name='Title'/> 
             <Button onClick={()=>{addProject(isTitle);setVisibleAdd(false);setTitle("")}}>Создать</Button>
         </Modal>
         <Button onClick={()=>setVisibleAdd(true)}>Add +</Button>
